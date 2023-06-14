@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple File Upload and Checkboxes</title>
+</head>
+<body>
+  <h1>Multiple File Upload and Checkboxes</h1>
+
+  <h3>Upload OPQ:</h3>
+  <input type="file" id="fileInput1">
+  <button onclick="uploadFile(1)">Upload OPQ</button>
+
+  <h3>Upload Verify:</h3>
+  <input type="file" id="fileInput2">
+  <button onclick="uploadFile(2)">Upload Verify</button>
+
+  <h3>Välj 5 kompetensdimmensioner:</h3>
+  <form id="checkboxForm">
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Besluta och starta aktiviteter</label><br>
+
+    <input type="checkbox" id="checkbox2">
+    <label for="checkbox2">Checkbox 2</label><br>
+
+    <input type="checkbox" id="checkbox3">
+    <label for="checkbox3">Checkbox 3</label><br>
+
+    <input type="checkbox" id="checkbox4">
+    <label for="checkbox4">Checkbox 4</label><br>
+
+    <input type="checkbox" id="checkbox5">
+    <label for="checkbox5">Checkbox 5</label><br>
+
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Besluta och starta aktiviteter</label><br>
+
+    <input type="checkbox" id="checkbox2">
+    <label for="checkbox2">Checkbox 2</label><br>
+
+    <input type="checkbox" id="checkbox3">
+    <label for="checkbox3">Checkbox 3</label><br>
+
+    <input type="checkbox" id="checkbox4">
+    <label for="checkbox4">Checkbox 4</label><br>
+
+    <input type="checkbox" id="checkbox5">
+    <label for="checkbox5">Checkbox 5</label><br>
+
+    <!-- Add more checkboxes as needed -->
+
+    <input type="submit" value="Submit" onclick="submitForm()">
+  </form>
+
+  <script>
+    function uploadFile(fileNumber) {
+      var fileInput;
+      if (fileNumber === 1) {
+        fileInput = document.getElementById("fileInput1");
+      } else if (fileNumber === 2) {
+        fileInput = document.getElementById("fileInput2");
+      } else {
+        console.log("Invalid file number");
+        return;
+      }
+      var file = fileInput.files[0];
+      console.log("File " + fileNumber + " uploaded: " + file.name);
+    }
+
+    function submitForm() {
+      var form = document.getElementById("checkboxForm");
+      form.submit();
+      console.log("Form submitted");
+    }
+  </script>
+</body>
+</html>
